@@ -1,0 +1,20 @@
+{
+  "key.quickzoom.zoom": "缩放",
+  "key.categories.misc": "杂项",
+
+  "quickzoom.configuration.title": "QuickZoom",
+
+  "quickzoom.configuration.section.quickzoom.client.toml": "客户端设置",
+  "quickzoom.configuration.section.quickzoom.client.toml.title": "QuickZoom – 客户端",
+
+  "quickzoom.configuration.general": "常规",
+
+  "quickzoom.configuration.zoomMultiplier": "缩放倍率",
+  "quickzoom.configuration.zoomMultiplier.tooltip": "缩放强度（2.0 = 2倍, 16.0 = 16倍）。默认：4.0",
+  "quickzoom.configuration.enableCinematic": "电影视角",
+  "quickzoom.configuration.enableCinematic.tooltip": "缩放时启用电影视角（F8 平滑摄像机效果）。默认：开启",
+  "quickzoom.configuration.enableSmoothZoom": "平滑缩放过渡",
+  "quickzoom.configuration.enableSmoothZoom.tooltip": "像望远镜一样缓慢改变 FOV。关闭则瞬间切换。默认：关闭",
+  "quickzoom.configuration.smoothSpeed": "过渡速度",
+  "quickzoom.configuration.smoothSpeed.tooltip": "FOV 过渡速度（0.01 = 慢, 1.0 = 快）。默认：0.1"
+}

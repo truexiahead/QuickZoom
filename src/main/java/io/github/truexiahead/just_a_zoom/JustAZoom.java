@@ -13,6 +13,7 @@ import net.neoforged.neoforge.client.event.ViewportEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.client.settings.KeyConflictContext;
 import org.lwjgl.glfw.GLFW;
 
 @Mod(JustAZoom.MOD_ID)
@@ -41,6 +42,7 @@ public class JustAZoom {
     public JustAZoom(IEventBus modEventBus, ModContainer modContainer) {
         zoomKey = new KeyMapping(
                 "key.just_a_zoom.zoom",
+                KeyConflictContext.IN_GAME,
                 InputConstants.Type.KEYSYM,
                 GLFW.GLFW_KEY_C,
                 "key.categories.misc"
@@ -97,7 +99,7 @@ public class JustAZoom {
     private void onComputeFov(ViewportEvent.ComputeFov event) {
         if (mc.player == null) return;
 
-        float partialTick = mc.getTimer().getGameTimeDeltaPartialTick(false);
+        float partialTick = (float) event.getPartialTick();
         float rendered = prevFovFactor + (currentFovFactor - prevFovFactor) * partialTick;
 
         if (Math.abs(rendered - 1.0f) < 0.0001f) return;

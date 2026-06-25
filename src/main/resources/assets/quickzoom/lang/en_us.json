@@ -1,0 +1,20 @@
+{
+  "key.quickzoom.zoom": "Zoom",
+  "key.categories.misc": "Miscellaneous",
+
+  "quickzoom.configuration.title": "QuickZoom",
+
+  "quickzoom.configuration.section.quickzoom.client.toml": "Client Settings",
+  "quickzoom.configuration.section.quickzoom.client.toml.title": "QuickZoom – Client",
+
+  "quickzoom.configuration.general": "General",
+
+  "quickzoom.configuration.zoomMultiplier": "Zoom Multiplier",
+  "quickzoom.configuration.zoomMultiplier.tooltip": "Zoom strength (2.0 = 2x, 16.0 = 16x). Default: 4.0",
+  "quickzoom.configuration.enableCinematic": "Cinematic Camera",
+  "quickzoom.configuration.enableCinematic.tooltip": "Enable cinematic camera (F8 smooth camera) while zooming. Default: ON",
+  "quickzoom.configuration.enableSmoothZoom": "Smooth Zoom Transition",
+  "quickzoom.configuration.enableSmoothZoom.tooltip": "Gradually change FOV like a telescope. Disable for instant switch. Default: OFF",
+  "quickzoom.configuration.smoothSpeed": "Smooth Transition Speed",
+  "quickzoom.configuration.smoothSpeed.tooltip": "How fast the FOV transitions (0.01 = slow, 1.0 = fast). Default: 0.1"
+}

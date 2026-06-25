@@ -1,4 +1,4 @@
-package io.github.truexiahead.just_a_zoom;
+package io.github.truexiahead.quickzoom;
 
 import net.neoforged.neoforge.common.ModConfigSpec;
 
@@ -12,7 +12,7 @@ public class Config {
 
     static {
         ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
-        builder.comment("Just A Zoom Configuration").push("general");
+        builder.comment("QuickZoom Configuration").push("general");
 
         zoomMultiplier = builder
                 .comment("Zoom multiplier. 2.0 = 2x zoom, 16.0 = 16x zoom. Higher value = more zoomed in.")

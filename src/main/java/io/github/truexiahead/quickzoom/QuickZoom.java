@@ -1,4 +1,4 @@
-package io.github.truexiahead.just_a_zoom;
+package io.github.truexiahead.quickzoom;
 
 import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.KeyMapping;
@@ -16,11 +16,11 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.client.settings.KeyConflictContext;
 import org.lwjgl.glfw.GLFW;
 
-@Mod(JustAZoom.MOD_ID)
-public class JustAZoom {
-    public static final String MOD_ID = "just_a_zoom";
+@Mod(QuickZoom.MOD_ID)
+public class QuickZoom {
+    public static final String MOD_ID = "quickzoom";
 
-    private static final Minecraft mc = Minecraft.getInstance();
+    private static Minecraft mc() { return Minecraft.getInstance(); }
 
     private final KeyMapping zoomKey;
 
@@ -39,9 +39,9 @@ public class JustAZoom {
     private boolean cachedSmoothZoom;
     private float cachedSmoothLerp;
 
-    public JustAZoom(IEventBus modEventBus, ModContainer modContainer) {
+    public QuickZoom(IEventBus modEventBus, ModContainer modContainer) {
         zoomKey = new KeyMapping(
-                "key.just_a_zoom.zoom",
+                "key.quickzoom.zoom",
                 KeyConflictContext.IN_GAME,
                 InputConstants.Type.KEYSYM,
                 GLFW.GLFW_KEY_C,
@@ -65,7 +65,7 @@ public class JustAZoom {
     // ---- Per-tick: state transitions + smooth-zoom interpolation ----
 
     private void onClientTick(ClientTickEvent.Pre event) {
-        if (mc.player == null) return;
+        if (mc().player == null) return;
 
         boolean keyDown = zoomKey.isDown();
 
@@ -97,7 +97,7 @@ public class JustAZoom {
     // ---- FOV modification (frame-level, partial-tick interpolation) ----
 
     private void onComputeFov(ViewportEvent.ComputeFov event) {
-        if (mc.player == null) return;
+        if (mc().player == null) return;
 
         float partialTick = (float) event.getPartialTick();
         float rendered = prevFovFactor + (currentFovFactor - prevFovFactor) * partialTick;
@@ -121,15 +121,15 @@ public class JustAZoom {
     private void startZoom() {
         isZooming = true;
         if (Config.enableCinematic.get()) {
-            savedCinematicCamera = mc.options.smoothCamera;
-            mc.options.smoothCamera = true;
+            savedCinematicCamera = mc().options.smoothCamera;
+            mc().options.smoothCamera = true;
         }
     }
 
     private void stopZoom() {
         isZooming = false;
         if (Config.enableCinematic.get()) {
-            mc.options.smoothCamera = savedCinematicCamera;
+            mc().options.smoothCamera = savedCinematicCamera;
         }
     }
 }

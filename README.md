@@ -1,4 +1,4 @@
-# Just A Zoom
+# QuickZoom
 
 一个适用于 NeoForge 1.21.11 的简洁、可配置缩放模组。
 
@@ -8,7 +8,7 @@
 - 可选平滑缩放过渡（望远镜式渐进 FOV 变化）
 
 ## 配置
-所有设置均可在游戏内通过 **Mods → Just A Zoom → Config** 进行调整。
+所有设置均可在游戏内通过 **Mods → QuickZoom → Config** 进行调整。
 - **缩放倍率**（2.0–16.0，默认 4.0）
 - **电影视角**（默认开启）
 - **平滑缩放过渡**（默认关闭）
@@ -19,7 +19,7 @@
 
 ---
 
-# Just A Zoom
+# QuickZoom
 
 A simple, configurable zoom mod for NeoForge 1.21.11.
 
@@ -29,7 +29,7 @@ A simple, configurable zoom mod for NeoForge 1.21.11.
 - Optional smooth zoom transition (telescope-style gradual FOV change)
 
 ## Configuration
-All settings are available in-game via **Mods → Just A Zoom → Config**.
+All settings are available in-game via **Mods → QuickZoom → Config**.
 - **Zoom Multiplier** (2.0–16.0, default 4.0)
 - **Cinematic Camera** (default ON)
 - **Smooth Zoom Transition** (default OFF)

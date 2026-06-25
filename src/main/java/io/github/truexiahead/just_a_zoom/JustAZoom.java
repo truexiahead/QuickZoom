@@ -20,7 +20,7 @@ import org.lwjgl.glfw.GLFW;
 public class JustAZoom {
     public static final String MOD_ID = "just_a_zoom";
 
-    private static final Minecraft mc = Minecraft.getInstance();
+    private static Minecraft mc() { return Minecraft.getInstance(); }
 
     private final KeyMapping zoomKey;
 
@@ -45,7 +45,7 @@ public class JustAZoom {
                 KeyConflictContext.IN_GAME,
                 InputConstants.Type.KEYSYM,
                 GLFW.GLFW_KEY_C,
-                "key.categories.misc"
+                KeyMapping.Category.MISC
         );
 
         modContainer.registerConfig(ModConfig.Type.CLIENT, Config.SPEC);
@@ -65,7 +65,7 @@ public class JustAZoom {
     // ---- Per-tick: state transitions + smooth-zoom interpolation ----
 
     private void onClientTick(ClientTickEvent.Pre event) {
-        if (mc.player == null) return;
+        if (mc().player == null) return;
 
         boolean keyDown = zoomKey.isDown();
 
@@ -97,7 +97,7 @@ public class JustAZoom {
     // ---- FOV modification (frame-level, partial-tick interpolation) ----
 
     private void onComputeFov(ViewportEvent.ComputeFov event) {
-        if (mc.player == null) return;
+        if (mc().player == null) return;
 
         float partialTick = (float) event.getPartialTick();
         float rendered = prevFovFactor + (currentFovFactor - prevFovFactor) * partialTick;
@@ -121,15 +121,15 @@ public class JustAZoom {
     private void startZoom() {
         isZooming = true;
         if (Config.enableCinematic.get()) {
-            savedCinematicCamera = mc.options.smoothCamera;
-            mc.options.smoothCamera = true;
+            savedCinematicCamera = mc().options.smoothCamera;
+            mc().options.smoothCamera = true;
         }
     }
 
     private void stopZoom() {
         isZooming = false;
         if (Config.enableCinematic.get()) {
-            mc.options.smoothCamera = savedCinematicCamera;
+            mc().options.smoothCamera = savedCinematicCamera;
         }
     }
 }

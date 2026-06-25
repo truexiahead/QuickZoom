@@ -1,6 +1,6 @@
 # Just A Zoom
 
-一个适用于 NeoForge 1.21.4 的简洁、可配置缩放模组。
+一个适用于 NeoForge 1.21.11 的简洁、可配置缩放模组。
 
 ## 功能
 - 可调节 2x–16x 缩放（默认 C 键，可配置）
@@ -21,7 +21,7 @@
 
 # Just A Zoom
 
-A simple, configurable zoom mod for NeoForge 1.21.4.
+A simple, configurable zoom mod for NeoForge 1.21.11.
 
 ## Features
 - Adjustable 2x–16x zoom (default C key, configurable)

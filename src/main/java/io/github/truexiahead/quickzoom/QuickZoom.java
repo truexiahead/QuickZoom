@@ -7,6 +7,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 import net.neoforged.neoforge.client.event.ViewportEvent;
@@ -51,7 +52,7 @@ public class QuickZoom {
 
         modEventBus.addListener(this::onRegisterKeys);
         NeoForge.EVENT_BUS.addListener(this::onClientTick);
-        NeoForge.EVENT_BUS.addListener(this::onComputeFov);
+        NeoForge.EVENT_BUS.addListener(EventPriority.LOW, this::onComputeFov);
     }
 
     // ---- Key registration ----
